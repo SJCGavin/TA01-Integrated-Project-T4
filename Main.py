@@ -1,2 +1,2 @@
-import moda
+import ModA
 print("hello world")
