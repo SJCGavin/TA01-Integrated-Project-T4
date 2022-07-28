@@ -18,3 +18,5 @@ with fp.open (mode="r", encoding = "UTF-8", newline="") as file1:
 
     # for line in reader:
     #     print(line)
+
+    
