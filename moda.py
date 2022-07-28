@@ -1,2 +1,2 @@
-print("hello go die")
+print("hello world")
 print("T")
