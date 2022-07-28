@@ -1,3 +1,4 @@
+from audioop import avg
 import requests
 from pathlib import Path
 import re
@@ -14,3 +15,20 @@ excravg_new = str(excravg)
 excravg_strip = excravg_new.replace("'4. close': '", "")
 excravg_strip_1 = excravg_strip.replace("'", "")
 print(excravg_strip_1)
+
+empty_list=[]
+# for number in excravg_strip_1:
+#     empty_list.append(excravg_strip_1)
+# sum(empty_list)
+def weekly_mean():
+    """
+    - function to calculate average weekly forex
+    """
+    total = 0 
+    for avg in empty_list:
+        empty_list.append(data)
+        total += avg / len(empty_list)
+        return (total)
+    # return (f"Aveage weekly forex':{total}")
+# print (weekly_mean)
+
