@@ -6,8 +6,15 @@
 from pathlib import Path
 import csv
 import re
-fp = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
+fp = Path.cwd()/"TA01-Integrated-Project-T4"/"csv_reports"/"Cash-on-hand-usd.csv"
+empty_list = []
 with fp.open (mode="r", encoding = "UTF-8", newline="") as file1:
     reader= csv.reader(file1)
+    next(reader)
     for line in reader:
-        print(line)
+        for value in line:
+            coh = re.findall(pattern = r"[0-9][0-9][0-9]+", string = value)
+            empty_list.append(coh)
+
+    # for line in reader:
+    #     print(line)
