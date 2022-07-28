@@ -8,3 +8,5 @@ r = requests.get(url)
 data = r.json()
 
 print(data)
+fp = Path.cwd()
+print(fp.exists())
