@@ -4,6 +4,8 @@
 
 def api():
     from pathlib import Path
+    import csv
+    import re
     fp = Path.cwd()
     for file in fp.glob("*.csv"):
         with file.open (mode="r", encoding = "UTF-8") as file:
