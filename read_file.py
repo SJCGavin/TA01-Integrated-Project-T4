@@ -12,10 +12,9 @@ with fp.open (mode="r", encoding = "UTF-8", newline="") as file1:
     reader= csv.reader(file1)
     next(reader)
     for line in reader:
-        for value in line:
-            coh = re.findall(pattern = r"[0-9][0-9][0-9]+", string = value)
-            empty_list.append(coh)
-
+        empty_list.append(line)
+for list in empty_list:
+    print(list[1])
     # for line in reader:
     #     print(line)
 
