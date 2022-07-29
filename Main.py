@@ -7,7 +7,6 @@ empty_list = []
 with open(r".\csv_reports\Profit-and-loss-usd.csv","r") as file:
     reader=csv.reader(file)
     next(reader)
-    next(reader)
     for line in reader:
         empty_list.append(line)
 for list in empty_list:
