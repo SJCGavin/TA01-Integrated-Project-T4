@@ -44,6 +44,9 @@ def cashdata():
             elif days > float(line[0]) + 1:
                 if cash < float(line[0]):
                     data.append(line)
+            elif days < float(line[0]) + 1:
+                if cash > float(line[0]):
+                    return "gvsdbhukedbhuewfu"
 print(cashdata())
 
 
