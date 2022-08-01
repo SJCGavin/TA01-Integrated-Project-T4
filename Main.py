@@ -56,6 +56,9 @@ def overheady():
         for line in reader:
             lines = float(line[1])
             listy.append(lines)
+        listy.sort()
+        print(listy)
+        print(listy[-1])
         
             
             
