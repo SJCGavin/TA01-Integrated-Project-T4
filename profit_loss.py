@@ -13,7 +13,6 @@ with fp_pnl.open (mode="r", encoding = "UTF-8", newline="") as file1:
 def profit_loss_data():
     days = 0
     cash=0
-    data = []
     for line in empty_list_pnl:
         if days == 0:
             days = float(line[0]) + 1
