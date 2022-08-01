@@ -1,7 +1,7 @@
 from pathlib import Path
 import csv
 empty_list_pnl = []
-fp_pnl = Path.cwd()/"TA01-Integrated-Project-T4"/"csv_reports"/"Profit-and-loss-usd.csv"
+fp_pnl = Path.cwd()/"csv_reports"/"Profit-and-loss-usd.csv"
 with fp_pnl.open (mode="r", encoding = "UTF-8", newline="") as file1:
     reader = csv.reader(file1)
     next(reader)

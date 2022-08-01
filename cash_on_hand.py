@@ -1,7 +1,7 @@
 from pathlib import Path
 import csv
 
-fp_coh = Path.cwd()/"TA01-Integrated-Project-T4"/"csv_reports"/"Cash-on-hand-usd.csv"
+fp_coh = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
 def cashdata():
     with fp_coh.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
