@@ -25,19 +25,26 @@ def cashdata():
     with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader)
-        day = 0
+        '''
+        Opens file to read data
+        '''
+        days = 0
         cash = 0
-        empty_list = []
+        '''
+        
+        '''
+        data = []
         for line in reader:
-            if day == 0:
-                day = float(line[0]) + 1
-                cash = float(line[0])
-            elif day < float(line[0]) + 1:
+            if days == 0:
+                days = float(line[0]) + 1
+                cash = float(line[1])
+            elif days < float(line[0]) + 1:
                 if cash > float(line[1]):
                     return line
-            elif day > float(line[0]) + 1:
+            elif days > float(line[0]) + 1:
                 if cash < float(line[0]):
-                    return line
+                    data.append(line)
+print(cashdata())
 
 
 
