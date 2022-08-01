@@ -5,14 +5,14 @@
 
 from pathlib import Path
 import csv
-fp = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
+fp = Path.cwd()/"csv_reports"/"Profit-and-loss-usd.csv"
 empty_list = []
 with fp.open (mode="r", encoding = "UTF-8", newline="") as file1:
     reader= csv.reader(file1)
     next(reader)
     for line in reader:
         empty_list.append(line)
-        print(line)
+        print(line[0],line[3])
 
         
 # for list in empty_list:

@@ -16,6 +16,7 @@ avg = data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
 print(f"1 USD = {avg} SGD")
 
 
+
 def data():
     """
     """
