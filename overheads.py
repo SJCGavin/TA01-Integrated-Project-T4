@@ -1,13 +1,17 @@
 from pathlib import Path
-from winreg import HKEY_LOCAL_MACHINE
+import csv
 
-from read_file import cashdata
+empty_list_overhead = []
+fp1 = Path.cwd()/"csv_reports"/"Overheads-day-45.csv"
 
-fp = Path.cwd()
-fp_txt = Path.cwd()/(r"deficit_report.txt")
-fp_txt.touch()
-# print(fp_txt.exists())
-
-
-
-print(cashdata())
+def overhead():
+    with fp1.open(mode="r", encoding="UTF-8", newline="") as file:
+        reader = csv.reader(file)
+        next(reader)
+        for line in reader:
+            lines = float(line[1])
+            empty_list_overhead.append(lines)
+            empty_list_overhead.sort()
+            return empty_list_overhead[-1]
+            
+print(overhead())
