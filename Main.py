@@ -20,36 +20,47 @@ import re
 # for list in empty_list:
 #     data=[list[0],list[3]]
 #     print(data)
-fp = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
-def cashdata():
-    with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+
+
+# fp = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
+# def cashdata():
+#     with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+#         reader = csv.reader(file)
+#         next(reader)
+#         '''
+#         Opens file to read data
+#         '''
+#         days = 0
+#         cash = 0
+#         '''
+        
+#         '''
+#         data = []
+#         for line in reader:
+#             if days == 0:
+#                 days = float(line[0]) + 1
+#                 cash = float(line[1])
+#             elif days < float(line[0]) + 1:
+#                 if cash > float(line[1]):
+#                     return line
+#             elif days > float(line[0]) + 1:
+#                 if cash < float(line[0]):
+#                     data.append(line)
+# print(cashdata())
+listy = []
+fp1 = Path.cwd()/"csv_reports"/"Overheads-day-45.csv"
+def overheady():
+    with fp1.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader)
-        '''
-        Opens file to read data
-        '''
-        days = 0
-        cash = 0
-        '''
-        
-        '''
-        data = []
         for line in reader:
-            if days == 0:
-                days = float(line[0]) + 1
-                cash = float(line[1])
-            elif days < float(line[0]) + 1:
-                if cash > float(line[1]):
-                    return line
-            elif days > float(line[0]) + 1:
-                if cash < float(line[0]):
-                    data.append(line)
-            elif days < float(line[0]) + 1:
-                if cash > float(line[0]):
-                    return "gvsdbhukedbhuewfu"
-print(cashdata())
+            lines = float(line[1])
+            listy.append(lines)
+        
+            
+            
 
-
+print(overheady())
 
 
 
