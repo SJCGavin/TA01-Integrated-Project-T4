@@ -19,11 +19,11 @@ def profit_loss_data():
             cash = float(line[1])
         elif days < float(line[0]) + 1:
             if cash > float(line[1]):
-                return line
+                return "Net profit on each period is higher than the previous period"
         elif days > float(line[0]) + 1:
             if cash < float(line[1]):
                 return line
         elif days < float(line[0]) + 1:
             if cash > float(line[1]):
-                return "Net profit on each period is higher than the previous period"
+                return line
 print(profit_loss_data())
