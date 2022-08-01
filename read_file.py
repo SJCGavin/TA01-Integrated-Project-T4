@@ -47,9 +47,9 @@ with fp.open (mode="r", encoding = "UTF-8", newline="") as file1:
     next(reader)
     for line in reader:
         empty_list.append(line)
-        poo = (line[0],line[3])
-        list.append(poo)
-def peepee():
+        profit_loss = (line[0],line[3])
+        list.append(profit_loss)
+def profit_loss_data():
     days = 0
     cash=0
     data = []
@@ -66,4 +66,4 @@ def peepee():
         elif days < float(line[0]) + 1:
             if cash > float(line[1]):
                 return "None"
-print(peepee())
+print(profit_loss_data())
