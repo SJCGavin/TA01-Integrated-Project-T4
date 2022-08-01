@@ -1,25 +1,7 @@
-# import re
-# exchr = re.findall(pattern = "[0-9].[0-9]+", string = data_str)
-# print(exchr[0])
+from pathlib import Path
+import csv
 
-
-
-
-
-# listy = []
-# fp1 = Path.cwd()/"csv_reports"/"Overheads-day-45.csv"
-# def overheady():
-#     with fp1.open(mode="r", encoding="UTF-8", newline="") as file:
-#         reader = csv.reader(file)
-#         next(reader)
-#         for line in reader:
-#             lines = float(line[1])
-#             listy.append(lines)
-#         listy.sort()
-#         print(listy[-1])
-# print(overheady())
-        
-fp = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
+fp = Path.cwd()/"TA01-Integrated-Project-T4"/"csv_reports"/"Cash-on-hand-usd.csv"
 def cashdata():
     with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
@@ -43,3 +25,4 @@ def cashdata():
             elif days > float(line[0]) + 1:
                 if cash < float(line[0]):
                     data.append(line)
+print(cashdata())
