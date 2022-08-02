@@ -3,16 +3,22 @@ import csv
 
 lis = []
 
-fp_coh = Path.cwd()/"TA01-Integrated-Project-T4"/"csv_reports"/"Cash-on-hand-usd.csv"
+fp_coh = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
 
 with fp_coh.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)
     for line in reader:
         lis.append(line)
-for i in range(1, len(lis)-1):
+
+count = 0
+for i in range(1, len(lis)):
     if lis[i][1] < lis[i-1][1]:
         print(lis[i])
+    elif lis[i][1] > lis[i-1][1]:
+        count += 1
+        if count == len(lis) - 1:
+            print("CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
 
 
