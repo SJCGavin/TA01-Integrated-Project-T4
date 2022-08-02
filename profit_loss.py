@@ -26,4 +26,5 @@ def profit_loss_data():
         elif days < float(line[0]) + 1:
             if cash > float(line[1]):
                 return line
+
 print(profit_loss_data())
