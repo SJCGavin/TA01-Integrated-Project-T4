@@ -6,8 +6,6 @@ import csv
 
 fp_summarytext = Path.cwd()/"summary_report.txt"
 fp_summarytext.touch()
-print(fp_summarytext.exists())
-
 # # def main():
 # #     avg_cp = mean_forex_closing_price()
 # #     days, cash, net_profit, overheads
@@ -32,10 +30,12 @@ import api, cash_on_hand, overheads, profit_loss
 
 def main():
 
-    forex = api
-    overheads.overhead(forex)
-    cash_on_hand.cashdata(forex)
-    profit_loss.profit_loss_data(forex)
+    forex = api.api_exchange()
+    return overheads.overhead(forex)
+    # cash_on_hand.cashdata(forex)
+    # profit_loss.profit_loss_data(forex)
 
+# print(api.api_exchange())
+# print(overheads.overhead(api.api_exchange()))
 print(main())
 
