@@ -28,14 +28,14 @@ fp_summarytext.touch()
 
 import api, cash_on_hand, overheads, profit_loss
 
-# def main():
+def main():
 
-#     forex = api.api_exchange()
-#     return overheads.overhead(forex)
-    # cash_on_hand.cashdata(forex)
-    # profit_loss.profit_loss_data(forex)
+    forex = api.api_exchange()
+    one = overheads.overhead(forex)
+    two = cash_on_hand.cashdata(forex)
+    three = profit_loss.profit_loss_data(forex)
+    return one, two
 
-# print(api.api_exchange())
-# print(overheads.overhead(api.api_exchange()))
-# print(main())
+
+print(main())
 

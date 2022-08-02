@@ -5,23 +5,25 @@ lis = []
 
 fp_coh = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
 
-with fp_coh.open(mode="r", encoding="UTF-8", newline="") as file:
-    reader = csv.reader(file)
-    next(reader)
-    for line in reader:
-        lis.append(line)
+def cashdata(ap):
+    with fp_coh.open(mode="r", encoding="UTF-8", newline="") as file:
+        reader = csv.reader(file)
+        next(reader)
+        for line in reader:
+            lis.append(line)
 
-count = 0
-for i in range(1, len(lis)):
-    if lis[i][1] < lis[i-1][1]:
-        print(lis[i])
-    elif lis[i][1] > lis[i-1][1]:
-        count += 1
-        if count == len(lis) - 1:
-            print("CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+    count = 0
+    for i in range(1, len(lis)):
+        if lis[i][1] < lis[i-1][1]:
+            lis2 = lis[i]
+        elif lis[i][1] > lis[i-1][1]:
+            count += 1
+            if count == len(lis) - 1:
+                print("CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+    ed = float(lis2[1]) * float(ap)
+    return ed
 
-
-
+# print(cashdata(2))
 #         '''
 #         Opens file to read data
 #         '''
