@@ -18,7 +18,7 @@ for i in range(1, len(empty_list_pnl2)):
     elif empty_list_pnl2[i][1] > empty_list_pnl2[i-1][1]:
         count += 1
         if count == len(empty_list_pnl2) - 1:
-            print("CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+            print("PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
 # def profit_loss_data():
 #     days = 0
