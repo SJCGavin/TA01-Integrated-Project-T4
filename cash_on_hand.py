@@ -13,8 +13,7 @@ with fp_coh.open(mode="r", encoding="UTF-8", newline="") as file:
 for i in range(1, len(lis)-1):
     if lis[i][1] < lis[i-1][1]:
         print(lis[i])
-    elif
-        print("CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
 
 
 #         '''

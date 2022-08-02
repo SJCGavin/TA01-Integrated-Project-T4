@@ -10,11 +10,16 @@ with fp_pnl.open (mode="r", encoding = "UTF-8", newline="") as file1:
         empty_list_pnl.append(line)
         profit_loss = (line[0],line[3])
         empty_list_pnl2.append(profit_loss)
-for i in range(1, len(empty_list_pnl2)-1):
-    if float(empty_list_pnl2[i][1]) < float(empty_list_pnl2[i-1][1]):
-        print(float(empty_list_pnl2[i]))
-    elif float(empty_list_pnl2[i][1]) == "0":
-        print("CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+# print(empty_list_pnl2)
+count = 0
+for i in range(1, len(empty_list_pnl2)):
+    if empty_list_pnl2[i][1] < empty_list_pnl2[i-1][1]:
+        print(empty_list_pnl2[i])
+    elif empty_list_pnl2[i][1] > empty_list_pnl2[i-1][1]:
+        count += 1
+        if count == len(empty_list_pnl2) - 1:
+            print("CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+
 # def profit_loss_data():
 #     days = 0
 #     cash=0
