@@ -4,7 +4,7 @@ import csv
 def profit_loss_data(forex):
     empty_list_pnl = []
     empty_list_pnl2 = []
-    fp_pnl = Path.cwd()/"TA01-Integrated-Project-T4"/"csv_reports"/"Profit-and-loss-usd.csv"
+    fp_pnl = Path.cwd()/"csv_reports"/"Profit-and-loss-usd.csv"
     with fp_pnl.open (mode="r", encoding = "UTF-8", newline="") as file1:
         reader = csv.reader(file1)
         next(reader)
@@ -25,4 +25,4 @@ def profit_loss_data(forex):
         return "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
     else:
         converted_pnl = float(final_ans_pnl[1]) * float(forex)
-        return converted_pnl
+        return round(float(final_ans_pnl[0]), 1), round(converted_pnl, 1)

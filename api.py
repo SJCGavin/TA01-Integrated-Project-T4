@@ -6,6 +6,6 @@ def api_exchange():
     r = requests.get(url)
     data = r.json()
     avg = data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
-    return avg
+    return round(float(avg), 5 )
 
 print(api_exchange())
