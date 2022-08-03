@@ -7,3 +7,5 @@ def api_exchange():
     data = r.json()
     avg = data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
     return avg
+
+print(api_exchange())

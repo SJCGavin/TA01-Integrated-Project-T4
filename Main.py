@@ -28,14 +28,19 @@ fp_summarytext.touch()
 
 import api, cash_on_hand, overheads, profit_loss
 
+empty_list = []
+
 def main():
 
     forex = api.api_exchange()
     one = overheads.overhead(forex)
     two = cash_on_hand.cashdata(forex)
     three = profit_loss.profit_loss_data(forex)
-    return one, two, three
+    empty_list =  f"{one}, {two}, {three}"
+    return empty_list
 
 
 print(main())
 
+with fp_summarytext.open(mode="w", encoding="UTF-8", newline="") as file:
+    file.write(main())
