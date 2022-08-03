@@ -20,8 +20,8 @@ def cashdata(forex):
             count += 1
             if count == len(empty_list_coh) - 1:
                 empty_list_coh2 = "CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
-    if empty_list_coh2 == "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
-        return "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+    if empty_list_coh2 == "CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
+        return "CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
     else:
         converted_coh = float(empty_list_coh2[1]) * float(forex)
         return converted_coh
