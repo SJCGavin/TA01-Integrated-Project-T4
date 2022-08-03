@@ -1,10 +1,10 @@
 from pathlib import Path
 import csv
 
-def profit_loss_data(ap):
+def profit_loss_data(forex):
     empty_list_pnl = []
     empty_list_pnl2 = []
-    fp_pnl = Path.cwd()/"csv_reports"/"Profit-and-loss-usd.csv"
+    fp_pnl = Path.cwd()/"TA01-Integrated-Project-T4"/"csv_reports"/"Profit-and-loss-usd.csv"
     with fp_pnl.open (mode="r", encoding = "UTF-8", newline="") as file1:
         reader = csv.reader(file1)
         next(reader)
@@ -20,12 +20,12 @@ def profit_loss_data(ap):
         elif empty_list_pnl2[i][1] > empty_list_pnl2[i-1][1]:
             count += 1
             if count == len(empty_list_pnl2) - 1:
-                lis2 = "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
-    if lis2 == "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
+                empty_list_pnl3 = "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+    if empty_list_pnl3 == "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
         return "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
     else:
-        ed = float(empty_list_pnl2[1]) * float(ap)
-        return ed
+        converted_pnl = float(empty_list_pnl2[1]) * float(forex)
+        return converted_pnl
 
 print(profit_loss_data(2))
 # def profit_loss_data():
