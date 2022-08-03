@@ -34,7 +34,7 @@ def main():
     one = overheads.overhead(forex)
     two = cash_on_hand.cashdata(forex)
     three = profit_loss.profit_loss_data(forex)
-    return one, two
+    return one, two, three
 
 
 print(main())
