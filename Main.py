@@ -28,7 +28,8 @@ fp_summarytext.touch()
 
 import api, cash_on_hand, overheads, profit_loss
 
-
+emp = []
+empt = []
 
 def main():
 
@@ -36,15 +37,18 @@ def main():
     overhead_value = overheads.overhead(forex)
     coh_value = cash_on_hand.cashdata(forex)
     pnl_value = profit_loss.profit_loss_data(forex)
-    if pnl_value == "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
-        pnl_value2 = f"[PROFIT SURPLUS] {pnl_value}"
-    else:
-        pnl_value2 = f"[PROFIT DEFICIT] DAY: {pnl_value[0]} AMOUNT: SGD{pnl_value[1]}"
-    if coh_value == "CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
-        coh_value2 = f"[CASH SURPLUS] {coh_value}"
-    else:
-        coh_value2 = f"[CASH DEFICIT] DAY: {coh_value[0]} AMOUNT: SGD{coh_value[1]}"
-    return f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n[HIGHEST OVERHEADS] {overhead_value[0]}: SGD{overhead_value[1]}\n{coh_value2}\n{pnl_value2}"
+    # if pnl_value == "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
+    #     pnl_value2 = f"[PROFIT SURPLUS] {pnl_value}"
+    # else:
+    #     for stu in pnl_value:
+    #         pnl_value2 = f"[PROFIT DEFICIT] DAY: {stu[0]} AMOUNT: SGD{stu[1]}"
+    # if coh_value == "CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
+    #     coh_value2 = f"[CASH SURPLUS] {coh_value}"
+    # else:
+    #     for stuf in coh_value:
+    #         empt.append(f"[CASH DEFICIT] DAY: {stuf[0]} AMOUNT: SGD{stuf[1]}")
+    return f"{pnl_value}"
+    # return f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n[HIGHEST OVERHEADS] {overhead_value[0]}: SGD{overhead_value[1]}\n{coh_value2}\n{pnl_value2}"
     
 
 

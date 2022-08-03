@@ -61,7 +61,8 @@ fp_coh = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
 def cashdata(forex):
     with fp_coh.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
-        reader_helper = list(reader)[1:]
+        next(reader)
+        reader_helper = list(reader)
 
     count = 1
     for k in range(1,len(reader_helper)):
@@ -81,8 +82,8 @@ def cashdata(forex):
             days_and_money[0] = float(days_and_money[0])
             days_and_money[1] = float(days_and_money[1]) * float(forex)
 
-        for j in range(0,len(empty_list_coh)):
-            empty_list_coh[j] = tuple(empty_list_coh[j])
+        # for j in range(0,len(empty_list_coh)):
+        #     empty_list_coh[j] = tuple(empty_list_coh[j])
         return empty_list_coh
 
 print(cashdata(1))
