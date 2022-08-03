@@ -5,7 +5,7 @@ empty_list_coh = []
 
 fp_coh = Path.cwd()/"TA01-Integrated-Project-T4"/"csv_reports"/"Cash-on-hand-usd.csv"
 
-def cashdata(ap):
+def cashdata(forex):
     with fp_coh.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader)
@@ -23,6 +23,6 @@ def cashdata(ap):
     if empty_list_coh2 == "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
         return "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
     else:
-        converted_coh = float(empty_list_coh2[1]) * float(ap)
+        converted_coh = float(empty_list_coh2[1]) * float(forex)
         return converted_coh
 
