@@ -15,3 +15,4 @@ def api_exchange():
         return f"AN ERROR HAS OCCURED. \nREASON: {e}"
 
 print(api_exchange())
+
