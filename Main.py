@@ -6,32 +6,12 @@ import csv
 
 fp_summarytext = Path.cwd()/"summary_report.txt"
 fp_summarytext.touch()
-# # def main():
-# #     avg_cp = mean_forex_closing_price()
-# #     days, cash, net_profit, overheads
-
-# from profit_loss import profit_loss_data
-# from overheads import overhead
-# from cash_on_hand import cashdata
-
-# # # with fp_summarytext.open(mode="w", encoding="UTF-8", newline="") as filetest:
-# # #     profit = profit_loss_data
-# # #     filetest.write(profit)
-# # #     filetest.
-
-# print(profit_loss_data())
-# print(overhead)
-
-# empty_list = []
-# empty_list.append(profit_loss_data)
-# print(empty_list)
 
 import api, cash_on_hand, overheads, profit_loss
 
 def main():
     coh_value2 = []
     pnl_value2 = []
-    spns = []
 
     forex = api.api_exchange()
     overhead_value = overheads.overhead(forex)
@@ -48,7 +28,7 @@ def main():
     else:
         for k in range(len(coh_value)):
             coh_value2.append(f"\n[CASH DEFICIT] DAY: {coh_value[k][0]} AMOUNT: SGD{coh_value[k][1]}")
-    first = f"\n[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}"
+    first = f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}"
     second = f"\n[HIGHEST OVERHEADS] {overhead_value[0]}: SGD{overhead_value[1]}"
     list = [first, second]
     list.extend(coh_value2)
