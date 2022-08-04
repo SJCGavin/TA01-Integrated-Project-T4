@@ -13,17 +13,19 @@ def main():
     try:
         coh_value2 = []
         pnl_value2 = []
-
+    #
         forex = api.api_exchange()
         overhead_value = overheads.overhead(forex)
         coh_value = cash_on_hand.cashdata(forex)
         pnl_value = profit_loss.profit_loss_data(forex)
-
+    #
         if pnl_value == "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
             pnl_value2.append(f"\n[PROFIT SURPLUS] {pnl_value}")
+    #
         else:
             for i in range(len(pnl_value)):
                 pnl_value2.append(f"\n[PROFIT DEFICIT] DAY: {pnl_value[i][0]} AMOUNT: SGD{pnl_value[i][1]}")
+    #
         if coh_value == "CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
             coh_value2.append(f"\n[CASH SURPLUS] {coh_value}")
         else:
