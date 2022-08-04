@@ -28,30 +28,35 @@ fp_summarytext.touch()
 
 import api, cash_on_hand, overheads, profit_loss
 
-emp = []
-empt = []
-
 def main():
+    coh_value2 = []
+    pnl_value2 = []
+    spns = []
 
     forex = api.api_exchange()
     overhead_value = overheads.overhead(forex)
     coh_value = cash_on_hand.cashdata(forex)
     pnl_value = profit_loss.profit_loss_data(forex)
-    # if pnl_value == "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
-    #     pnl_value2 = f"[PROFIT SURPLUS] {pnl_value}"
-    # else:
-    #     for stu in pnl_value:
-    #         pnl_value2 = f"[PROFIT DEFICIT] DAY: {stu[0]} AMOUNT: SGD{stu[1]}"
-    # if coh_value == "CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
-    #     coh_value2 = f"[CASH SURPLUS] {coh_value}"
-    # else:
-    #     for stuf in coh_value:
-    #         empt.append(f"[CASH DEFICIT] DAY: {stuf[0]} AMOUNT: SGD{stuf[1]}")
-    # return f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n[HIGHEST OVERHEADS] {overhead_value[0]}: SGD{overhead_value[1]}\n{coh_value2}\n{pnl_value2}"
-    return pnl_value
 
+    if pnl_value == "NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
+        pnl_value2.append(f"\n[PROFIT SURPLUS] {pnl_value}")
+    else:
+        for i in range(len(pnl_value)):
+            pnl_value2.append(f"\n[PROFIT DEFICIT] DAY: {pnl_value[i][0]} AMOUNT: SGD{pnl_value[i][1]}")
+    if coh_value == "CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY":
+        coh_value2.append(f"\n[CASH SURPLUS] {coh_value}")
+    else:
+        for k in range(len(coh_value)):
+            coh_value2.append(f"\n[CASH DEFICIT] DAY: {coh_value[k][0]} AMOUNT: SGD{coh_value[k][1]}")
+    first = f"\n[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}"
+    second = f"\n[HIGHEST OVERHEADS] {overhead_value[0]}: SGD{overhead_value[1]}"
+    list = [first, second]
+    list.extend(coh_value2)
+    list.extend(pnl_value2)
+    return list
+        
 
 print(main())
 
-# with fp_summarytext.open(mode="w", encoding="UTF-8", newline="") as file:
-#     file.write(main())
+with fp_summarytext.open(mode="w", encoding="UTF-8", newline="") as file:
+    file.writelines(main())

@@ -1,8 +1,6 @@
 from pathlib import Path
 import csv
 
-empty_list_pnl = []
-empty_list_pnl2 = []
 fp_pnl = Path.cwd()/"csv_reports"/"Profit-and-loss-usd.csv"
 
 # def profit_loss_data(forex):
@@ -32,6 +30,8 @@ fp_pnl = Path.cwd()/"csv_reports"/"Profit-and-loss-usd.csv"
 #         return round(float(final_ans_pnl[0]), 1), round(converted_pnl, 1)
 
 def profit_loss_data(forex):
+    empty_list_pnl = []
+    empty_list_pnl2 = []
     with fp_pnl.open(mode="r", encoding="UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader)
