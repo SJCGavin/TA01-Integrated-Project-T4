@@ -44,4 +44,3 @@ def profit_loss_data(forex):
     #
     except Exception as e:
         return f"AN ERROR HAS OCCURED. \nREASON: {e}"
-yay
