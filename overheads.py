@@ -29,3 +29,4 @@ def overhead(forex):
         gavin
         coby
         haiqal
+        celeste
