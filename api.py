@@ -3,7 +3,7 @@ import requests
 def api_exchange():
     """
     - This function finds and returns the foreign exchange rate between USD and SGD
-    -No parameters required
+    - No parameters required
     """
     try:
 
