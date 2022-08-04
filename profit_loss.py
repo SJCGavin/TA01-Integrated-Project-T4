@@ -49,7 +49,7 @@ def profit_loss_data(forex):
             for days_and_money in empty_list_pnl2:
                 days_and_money[0] = float(days_and_money[0])
                 # Converts USD data into SGD
-                days_and_money[1] = float(days_and_money[1]) * float(forex)
+                days_and_money[1] = round(float(days_and_money[1]) * float(forex), 1)
 
             # Returns finished data
             return empty_list_pnl2
