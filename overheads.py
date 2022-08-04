@@ -24,3 +24,13 @@ def overhead(forex):
     
     except Exception as e:
         return f"AN ERROR HAS OCCURED. \nREASON: {e}"
+
+1 
+2
+3
+4
+5
+6
+
+
+
