@@ -1,8 +1,4 @@
-# # from api import mean_forex_closing_price
-# # from read_file import process_csv_file
-# # from write_file import report_deficit
 from pathlib import Path
-import csv
 
 fp_summarytext = Path.cwd()/"summary_report.txt"
 fp_summarytext.touch()
