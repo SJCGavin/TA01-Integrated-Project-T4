@@ -1,13 +1,14 @@
 from pathlib import Path
 import csv
 
+# Opens pathway to Cash-on-hand-usd.csv file
 fp_coh = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
 
 def cashdata(forex):
     """
-    - This function flags the days and deficit amount when the current day is lower than the previous day
+    - This function flags the days and deficit amount of current days with cash is lower than previous day
     - This function then converts the deficit amount from USD to SGD
-    - One parameter required: forex (the foreign exchange rate between USD and SGD as integer)
+    - One parameter required: forex (the foreign exchange rate between USD and SGD as integer or float)
     """
     try:
 
@@ -23,7 +24,7 @@ def cashdata(forex):
                 reader_helper.append(r)
         
         count = 1
-        # For loop compares current day data with previous data
+        # For loop compares current day data with previous day data
         # Counts the days where the cash is larger than the previous day
         for k in range(1, len(reader_helper)):
             if float(reader_helper[k][1]) >= float(reader_helper[k-1][1]):
@@ -35,7 +36,7 @@ def cashdata(forex):
             # If true, the function returns this
             return "CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
         else:
-            # If count is not equal to the number of variables in reader_helper
+            # If count is not equal to the number of variables in reader_helper, function continues here
             for i in range(1,len(reader_helper)):
                 # Compares current day cash to previous day cash
                 if float(reader_helper[i][1]) < float(reader_helper[i-1][1]):
@@ -53,5 +54,6 @@ def cashdata(forex):
             # Returns finished data
             return empty_list_coh
 
+    # except stops the code from crashing and provides a message for the error
     except Exception as e:
         return f"AN ERROR HAS OCCURED. \nREASON: {e}"
