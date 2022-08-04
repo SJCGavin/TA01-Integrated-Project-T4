@@ -18,7 +18,6 @@ def profit_loss_data(forex):
             reader = csv.reader(file)
     #
             next(reader)
-    #
             for line in reader:
                 stuff = (line[0],line[3])
                 empty_list_pnl.append(list(stuff))
