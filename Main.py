@@ -7,7 +7,7 @@ import api, cash_on_hand, overheads, profit_loss
 
 def main():
     """
-    - 
+    - This function returns a list with
     """
     #
     try:
