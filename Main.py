@@ -37,7 +37,7 @@ def main():
         list.extend(coh_value2)
         list.extend(pnl_value2)
         return list
-    
+    #
     except Exception as e:
         return f"AN ERROR HAS OCCURED. \nREASON: {e}"
         
