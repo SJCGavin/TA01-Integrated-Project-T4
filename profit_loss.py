@@ -7,12 +7,12 @@ def profit_loss_data(forex):
     """
     
     """
-
+    #
     try:
-
+    #
         empty_list_pnl = []
         empty_list_pnl2 = []
-
+    #
         with fp_pnl.open(mode="r", encoding="UTF-8", newline="") as file:
             reader = csv.reader(file)
             next(reader)
