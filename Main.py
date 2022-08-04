@@ -38,9 +38,6 @@ def main():
     except Exception as e:
         return f"AN ERROR HAS OCCURED. \nREASON: {e}"
         
-
-print(main())
-
 with fp_summarytext.open(mode="w", encoding="UTF-8", newline="") as file:
     file.writelines(main())
 
