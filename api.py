@@ -15,10 +15,10 @@ def api_exchange():
         # r gets the information from the currency exchange
         r = requests.get(url)
 
-        # Used to read and returns the data from the url as a string
+        # Used to read and wriyes it as a string in data
         data = r.json()
 
-        # avg is the foreign exchange rate between USD and SGD
+        # avg is the foreign exchange rate between USD and SGD read from data
         avg = data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
 
         # returns the data as a decimel rounded to 5 decimel place
