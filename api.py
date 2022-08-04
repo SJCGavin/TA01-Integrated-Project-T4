@@ -16,4 +16,3 @@ def api_exchange():
 
 print(api_exchange())
 
-gfh
