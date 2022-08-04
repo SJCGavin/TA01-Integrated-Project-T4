@@ -25,5 +25,4 @@ def overhead(forex):
     except Exception as e:
         return f"AN ERROR HAS OCCURED. \nREASON: {e}"
 
-        haiqal
         celeste
