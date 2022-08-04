@@ -9,3 +9,5 @@ def api_exchange():
     return round(float(avg), 5 )
 
 print(api_exchange())
+
+gfhfhhfh
