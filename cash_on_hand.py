@@ -4,7 +4,11 @@ import csv
 fp_coh = Path.cwd()/"csv_reports"/"Cash-on-hand-usd.csv"
 
 def cashdata(forex):
-
+    """
+    - This function flags the days and deficit amount when the current day is lower than the previous day
+    - This function then converts the deficit amount from USD to SGD
+    - One parameter required: forex (the foreign exchange rate between USD and SGD as integer)
+    """
     try:
 
         empty_list_coh = []
