@@ -5,7 +5,7 @@ fp_pnl = Path.cwd()/"csv_reports"/"Profit-and-loss-usd.csv"
 
 def profit_loss_data(forex):
     """
-    
+    -
     """
     #
     try:
