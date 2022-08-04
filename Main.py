@@ -47,12 +47,11 @@ def main():
     # else:
     #     for stuf in coh_value:
     #         empt.append(f"[CASH DEFICIT] DAY: {stuf[0]} AMOUNT: SGD{stuf[1]}")
-    return f"{pnl_value}"
     # return f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n[HIGHEST OVERHEADS] {overhead_value[0]}: SGD{overhead_value[1]}\n{coh_value2}\n{pnl_value2}"
-    
+    return pnl_value
 
 
 print(main())
 
-with fp_summarytext.open(mode="w", encoding="UTF-8", newline="") as file:
-    file.write(main())
+# with fp_summarytext.open(mode="w", encoding="UTF-8", newline="") as file:
+#     file.write(main())
